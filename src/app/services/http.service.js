@@ -9,7 +9,7 @@ axios.interceptors.response.use((res) => res, (err) => {
     const expectedErrors = err.response && err.response.status >= 400 && err.response.status < 500;
     if(!expectedErrors) {
         logger.log(err);
-        toast.error("Something went wrong. Try it later")
+        toast.error("Something went wrong. Try again later")
     }
     return Promise.reject(err);
 });
